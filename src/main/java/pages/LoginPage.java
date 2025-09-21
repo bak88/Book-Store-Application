@@ -1,6 +1,6 @@
-package auth;
+package pages;
 
-import data.ScenarioData;
+import data.AuthData;
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.By;
 
@@ -26,8 +26,8 @@ public class LoginPage extends BasePage {
 
     public static void signIn() {
         enterLoginAndPassword(
-                ScenarioData.getInstance().getUserName(),
-                ScenarioData.getInstance().getPassword()
+                AuthData.getInstance().getUserName(),
+                AuthData.getInstance().getPassword()
         );
     }
 }

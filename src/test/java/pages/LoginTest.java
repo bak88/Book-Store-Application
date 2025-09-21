@@ -1,6 +1,6 @@
-package auth;
+package pages;
 
-import data.ScenarioData;
+import data.AuthData;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,12 +12,12 @@ public class LoginTest {
     @BeforeEach
     void setUp() {
         BasePage.setDriver(new ChromeDriver());
-        ScenarioData.getInstance().setUserName("nintendo");
-        ScenarioData.getInstance().setPassword("090290B@k");
+        AuthData.getInstance().setUserName("nintendo");
+        AuthData.getInstance().setPassword("090290B@k");
     }
 
     @Test
-    void shouldLoginSuccessfully() {
+    void testValidLogin() {
         BasePage.driver.get(BasePage.BASE_URL + LoginPage.PATH_LOGIN);
         assertTrue(LoginPage.isOnPage(), "Login page is not loaded");
         LoginPage.signIn();
@@ -30,6 +30,6 @@ public class LoginTest {
         if (BasePage.driver != null) {
             BasePage.driver.quit();
         }
-        ScenarioData.getInstance().clear();
+        AuthData.getInstance().clear();
     }
 }

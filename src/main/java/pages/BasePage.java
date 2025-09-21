@@ -1,4 +1,4 @@
-package auth;
+package pages;
 
 import lombok.extern.slf4j.*;
 import org.openqa.selenium.*;
