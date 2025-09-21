@@ -1,4 +1,4 @@
-package com.demoqa.data;
+package data;
 
 import lombok.*;
 
@@ -11,5 +11,10 @@ public class ScenarioData {
 
     public static ScenarioData getInstance() {
         return INSTANCE;
+    }
+
+    public void clear() {
+        userName = null;
+        password = null;
     }
 }
