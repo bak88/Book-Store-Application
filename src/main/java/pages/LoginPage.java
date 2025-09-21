@@ -1,15 +1,14 @@
 package pages;
 
-import base.BasePage;
-import models.LoginModel;
-import lombok.experimental.UtilityClass;
-import org.openqa.selenium.By;
+import base.*;
+import models.*;
+import lombok.experimental.*;
+import org.openqa.selenium.*;
 
 @UtilityClass
 public class LoginPage extends BasePage {
 
     public static final String PATH_LOGIN = "/login";
-
     private static final By INPUT_USER_NAME = By.id("userName");
     private static final By INPUT_PASSWORD = By.id("password");
     private static final By LOGIN_BUTTON = By.id("login");

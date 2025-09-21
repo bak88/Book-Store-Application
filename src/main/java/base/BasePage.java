@@ -3,7 +3,7 @@ package base;
 import lombok.extern.slf4j.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
-import java.time.Duration;
+import java.time.*;
 
 @Slf4j
 public class BasePage {
@@ -27,7 +27,6 @@ public class BasePage {
             WebElement element = waitForElementToBeVisible(locator);
             element.clear();
             element.sendKeys(value);
-            log.info("Entering the values '{}' into the element: {}", value, locator);
         } catch (Exception e) {
             log.error("Error when entering the text in {}: {}", locator, e.getMessage());
         }
@@ -37,7 +36,6 @@ public class BasePage {
         try {
             WebElement element = waitForElementToBeClickable(locator);
             element.click();
-            log.info("Click on the element: {}", locator);
         } catch (Exception e) {
             log.error("Error when clicking on {}: {}", locator, e.getMessage());
         }

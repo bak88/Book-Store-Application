@@ -10,7 +10,7 @@ import java.util.stream.*;
 public class BooksPage extends BasePage {
 
     public static final String PATH = "/books";
-    private static final By BOOK_TITLES = By.xpath("//div[@class='rt-tbody']");
+    private static final By BOOK_TITLES = By.xpath("//div[@class='rt-tbody']//a");
 
     public static boolean isOnPage() {
         return isOnPage(PATH, BOOK_TITLES);
@@ -20,6 +20,7 @@ public class BooksPage extends BasePage {
         return driver.findElements(BOOK_TITLES)
                 .stream()
                 .map(WebElement::getText)
-                .collect(Collectors.toList());
+                .sorted()
+                .toList();
     }
 }

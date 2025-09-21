@@ -1,9 +1,8 @@
 package api;
 
-import io.restassured.RestAssured;
-import models.BookModel;
-
-import java.util.List;
+import io.restassured.*;
+import models.*;
+import java.util.*;
 
 public class BookStoreApi {
 

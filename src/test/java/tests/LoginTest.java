@@ -1,13 +1,15 @@
 package tests;
 
 import base.*;
+import lombok.extern.slf4j.*;
 import models.*;
 import pages.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 public class LoginTest {
 
     private LoginModel login;
@@ -23,9 +25,11 @@ public class LoginTest {
     void testValidLogin() {
         BasePage.driver.get(BasePage.BASE_URL + LoginPage.PATH_LOGIN);
         assertTrue(LoginPage.isOnPage(), "Login page is not loaded");
+        log.info("The Login page is open");
 
         LoginPage.signIn(login);
         assertTrue(LoginPage.isLoggedIn(), "Authorization failed");
+        log.info("A successful login is checked");
     }
 
     @AfterEach
