@@ -1,4 +1,4 @@
-package pages;
+package base;
 
 import lombok.extern.slf4j.*;
 import org.openqa.selenium.*;

@@ -1,15 +1,15 @@
-package data;
+package models;
 
 import lombok.*;
-import java.time.*;
 
 @Data
-public class Book {
+public class BookModel {
+
     private String isbn;
     private String title;
     private String subTitle;
     private String author;
-    private LocalDateTime publishDate;
+    private String publishDate;
     private String publisher;
     private int pages;
     private String description;
